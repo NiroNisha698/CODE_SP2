@@ -2,8 +2,12 @@ package AllCom;
 
 import NiroCom.Inheritance;
 import com_akshi.Size;
+
 import com_akshi.method;
 import com_akshi.variable;
+
+import maddyModel.Coupling;
+
 
 
 
@@ -14,9 +18,14 @@ public class AllFactors {
 	
 	int[] ciValue ;
 	int[] csValue;
+
 	int[] cmValue;
 	int[] cvValue;
+
+	int[] cpValue;
+
 	
+	//inheritance
 	public void getCiValue() {
 		Inheritance c = new Inheritance();
 		c.setCode(code);
@@ -24,13 +33,14 @@ public class AllFactors {
 
 	}
 	
-	
+	//Size
 	public void getSizeValue() {
 		Size s = new Size();
 		s.setCode(code);
 		csValue = s.getSizeValue();
 
 	}
+
 	public void getMethodValue() {
 		method m = new method();
 		m.setCode(code);
@@ -50,6 +60,21 @@ public class AllFactors {
 		getSizeValue();
 		getMethodValue();
 		getVariableValue();
+
+	//Coupling
+	public void getCPValue() {
+		Coupling c = new Coupling();
+		c.setCode(code);
+		cpValue = c.getccpValue();
+
+	}
+
+	//table
+	public String gettable() {
+		getCiValue();
+		getSizeValue();
+		getCPValue();
+
 		
 		String output = "";
 		String test = "";
@@ -68,7 +93,7 @@ public class AllFactors {
 			output += "<td>" + cvValue[i] + "</td>";
 			output += "<td>" + cmValue[i] + "</td>";
 			output += "<td>" + ciValue[i] + "</td>";
-			output += "<td>" + test + "</td>";
+			output += "<td>" + cpValue[i] + "</td>";
 			output += "<td>" + test + "</td>";
 			output += "<td>" + test + "</td></tr>";
 			i++;
