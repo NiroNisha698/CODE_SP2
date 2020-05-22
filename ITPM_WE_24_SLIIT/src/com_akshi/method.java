@@ -186,19 +186,51 @@ public class method {
 		int i = 0;
 		int j = lines.length;
 		int blank = 0;
+		int totalMethod =0;
+		String test="";
 		while(j >0) {
+			
+			totalMethod=totalMethod + (Wmrt[i]+ (1*Npdtp[i]+2*Ncdtp[i])) ;
+			
 			output += "<tr><td>" +lines[i]+"</td>";
 			output +="<td>" +Wmrt[i]+ "</td>"; 
-			output +="<td>" +blank+ "</td>"; 
+			output +="<td>" +Npdtp[i]+ "</td>"; 
 			output += "<td>"+Ncdtp[i]+"</td>";
-			output += "<td>" + (+ (2*Ncdtp[i]) )+ "</td></tr>";
+			output += "<td>" + (Wmrt[i]+ (1*Npdtp[i]+2*Ncdtp[i]) )+ "</td></tr>";
 	
 			i++;
 			j--;
 		}
+		output += "<tr><th bgcolor= '#FDEDEC '>" +"TOTAL"+"</th>";
+		output += "<th bgcolor= '#FDEDEC '>" +test+"</th>";
+		output += "<th bgcolor= '#FDEDEC '>" +test+"</th>";
+		output += "<th bgcolor= '#FDEDEC '>" +test+"</th>";
+		output += "<th bgcolor= '#FDEDEC '>" +totalMethod+"</th></tr>";
 		output +="</table>";
 		
 		return output;
 		
 	}
+	//all factor table get size method
+			public int[] getMethodValue() {
+				String[] lines = displayCode();
+				int[] method = new int [lines.length];	
+				int[] Wmrt = getKeyWrds();
+				int[] Npdtp = isPrimitive();
+				int[] Ncdtp = ismethod();
+				
+				
+				int i = 0;
+				int j = lines.length;
+				
+				while(j > 0) {
+					method[i] = Wmrt[i]+ (1*Npdtp[i]+2*Ncdtp[i]) ;
+					
+					i++;
+					j--;
+				}
+				
+				
+				return method;
+			}
 }
