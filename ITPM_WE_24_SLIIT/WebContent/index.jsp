@@ -296,7 +296,7 @@ p {margin: 6px; padding: 4px;}
     <a href="Upload.jsp">Size, Variable, Method</a></li>
   <li><a href="inheritance.jsp">Inheritance</a></li>
   <li><a href="Coupling.jsp">Coupling</a></li>
-   <li><a href="#">Control Structure</a></li>  
+   <li><a href="CS.jsp">Control Structure</a></li>  
 </ul>
 <br>
 <br>
