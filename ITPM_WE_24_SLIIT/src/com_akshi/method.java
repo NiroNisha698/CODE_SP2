@@ -201,4 +201,26 @@ public class method {
 		return output;
 		
 	}
+	public int[] getMethodValue() {
+		// TODO Auto-generated method stub
+		String[] lines = displayCode();
+		int[] method = new int [lines.length];	
+		int[] Ncdtp = ismethod();
+		int[] Wmrt = getKeyWrds();
+		int[] Npdtp = isPrimitive();
+		
+		
+		int i = 0;
+		int j = lines.length;
+		
+		while(j > 0) {
+			method[i] = Wmrt[i]+ 1*Npdtp[i] + 2*Ncdtp[i] ;
+			
+			i++;
+			j--;
+		}
+		
+		
+		return method;
+	}
 }

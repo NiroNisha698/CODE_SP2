@@ -436,18 +436,52 @@ public class variable {
 		int i = 0;
 		int j = lines.length;
 		int blank = 0;
+		int totalVariable=0;
+		String test="";
 		while(j >0) {
+			
+			totalVariable=totalVariable + (Wvs[i]*(1*Npdtv[i] + 2*Ncdtv[i]));
+			
 			output += "<tr><td>" +lines[i]+"</td>";
 			output += "<td>" +Wvs[i]+"</td>";
 			output += "<td>" +Npdtv[i]+"</td>";
 			output += "<td>" +Ncdtv[i]+"</td>";
-			output += "<td>" +(Wvs[i]*(1*Npdtv[i] + 0*Ncdtv[i]))+"</td></tr>";
+			output += "<td>" +(Wvs[i]*(1*Npdtv[i] + 2*Ncdtv[i]))+"</td></tr>";
 			i++;
 			j--;
 		}
+		output += "<tr><th bgcolor= '#FDEDEC '>" +"TOTAL"+"</th>";
+		output += "<th bgcolor= '#FDEDEC '>" +test+"</th>";
+		output += "<th bgcolor= '#FDEDEC '>" +test+"</th>";
+		output += "<th bgcolor= '#FDEDEC '>" +test+"</th>";
+		output += "<th bgcolor= '#FDEDEC '>" +totalVariable+"</th></tr>";
+		output +="</table>";
 		output +="</table>";
 		
 		return output;
 		
 	}
+	//all factor table get size method
+			public int[] getVariableValue() {
+				String[] lines = displayCode();
+				int[] variable = new int [lines.length];	
+				int[] Wvs = checkGloblevariable();
+				int[] Npdtv = getoperators();
+				int[] Ncdtv = getcomoperators();
+				
+				
+				int i = 0;
+				int j = lines.length;
+				
+				while(j > 0) {
+					variable[i] = Wvs[i]*(1*Npdtv[i] + 2*Ncdtv[i]) ;
+					
+					i++;
+					j--;
+				}
+				
+				
+				return variable;
+			}
+
 }
