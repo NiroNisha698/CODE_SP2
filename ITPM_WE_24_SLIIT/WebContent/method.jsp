@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-
-<html >
+<html>
 <head>
-<link rel="icon" href="logo3.png" type="image/png"> 
+<link rel="stylesheet" type="text/css" href="couple.css">
 <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="Views/bootstrap.min.css">
 <style>
 
 /*
@@ -15,8 +15,8 @@ Bule shades: #3C9DD0
 */
 
 body, ul, div{
-  margin:0;
-  padding:0;
+  margin:150;
+  padding:150;
 }
 
 /* basics */
@@ -46,19 +46,26 @@ body {
 }
 div.top-nav-bar-pos{
  background: #fff; 
+
 }
 
 .top-nav-bar-pos, .span-full, #footer{
   box-shadow: 0 0 3px rgba(50, 172, 219, 0.6);
 }
-
+.button {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50; /* Green */
+}
 
 div.top-nav-bar{
- margin: 0 0 10px 0;
+ width:"100%";
+ margin: 0 0 100px 0;
  text-align: center;
- padding: 4px;
+ font-size: 180%;
+ padding: 10px;
  background: #fff;
- height: 50px;
+ height: 100px;
 }
 
 ul.top-nav-bar{
@@ -73,9 +80,9 @@ li.top-nav-bar{
 }
 
 h2 {font-size: 130%; margin: 6px; clear: both;}
-h3 {font-size: 120%; margin: 6px;}
+h3 {font-size: 130%; margin: 6px;}
 
-p {margin: 6px; padding: 4px;}
+p {margin: 6px; padding: 4px; font-size: 100%;}
 
 /* 3 column */
 
@@ -282,81 +289,45 @@ p {margin: 6px; padding: 4px;}
     to {
         -ms-transform: translateY(0%);
     }
+    
+    
 }
 
 
-
 </style>
-<title>Code Complexity Measuring Tool</title>
+<title>Code Complexity Tool</title>
 </head>
 <body>
 <ul class="menu cf">
-  <li><a href="#">Home</a></li>
+  <li><a href="index.jsp">Home</a></li>
   <li>
     <a href="Upload.jsp">Size, Variable, Method</a></li>
   <li><a href="inheritance.jsp">Inheritance</a></li>
   <li><a href="Coupling.jsp">Coupling</a></li>
    <li><a href="#">Control Structure</a></li>  
 </ul>
-<br>
-<br>
-<br>
-<br>
 
+<br>
+<br>
+<button onclick="myFunction()">Toggle dark mode</button>
 
-<div class="main-content">
-  <!--1 Column Content-->
-  <div class="span-full">
-    <ul class="ca-menu">
-      <li>
-        <a href="#">
-          <span class="ca-icon">G</span>
-          <div class="ca-content">
-            <h1 class="ca-main">Generate Report</h1>
-            <h2 class="ca-sub">pdf</h2>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="AllTable.jsp">
-          <span class="ca-icon">D</span>
-          <div class="ca-content">
-            <h1 class="ca-main">Display All</h1>
-            <h2 class="ca-sub">Tables</h2>
-          </div>
-        </a>
-      </li>
-     
-    </ul>
-  </div>
-  </div>
-  
-  
-  
-  
-  
-  
-  <br>
-  
-  
-  
-  
-  
-<div id="footer">
-
-<p>A product of Salt & Pepper !!!</p>
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+<body>
+<center><h3>Complexity of Method</h3></center>
+<center>
+<div  border="1" font-size="200%" style="text-align:center;margin-top:  100px; float-align:center;width : 35%; float : center;" class="input-group-text" ">
+ <div class="row">
+ <div class="col-8"> 
+ ${tb}
 </div>
-
-
-
-<footer class="container-fluid" align="right">
-    <p>Done by: ITPM_WE_24</p>
-    <p id="timestamp" ></p>
-    <script>
-        document.getElementById("timestamp").innerHTML = Date();
-    </script>
-</footer>
-
-
+</div>
+</div>
+<button><a href="ViewUpload.jsp">back to choose file </a></button>
+<center>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package AllCom;
 
 import NiroCom.Inheritance;
+import com_akshi.Size;
 
 
 
@@ -8,7 +9,9 @@ import NiroCom.Inheritance;
 public class AllFactors {
 	AllcodeServlet cs = new AllcodeServlet();
 	private String code = cs.returnCode();
+	
 	int[] ciValue ;
+	int[] csValue;
 	
 	public void getCiValue() {
 		Inheritance c = new Inheritance();
@@ -18,8 +21,17 @@ public class AllFactors {
 	}
 	
 	
+	public void getSizeValue() {
+		Size s = new Size();
+		s.setCode(code);
+		csValue = s.getSizeValue();
+
+	}
+	
+	
 	public String gettable() {
 		getCiValue();
+		getSizeValue();
 		
 		String output = "";
 		String test = "";
@@ -34,7 +46,7 @@ public class AllFactors {
 			
 			
 			output += "<tr><td>" + lines[i] + "</td>";
-			output += "<td>" + test + "</td>";
+			output += "<td>" + csValue[i] + "</td>";
 			output += "<td>" + test + "</td>";
 			output += "<td>" + test + "</td>";
 			output += "<td>" + ciValue[i] + "</td>";
