@@ -55,12 +55,7 @@ public class AllFactors {
 	}
 	
 	
-	public String gettable() {
-		getCiValue();
-		getSizeValue();
-		getMethodValue();
-		getVariableValue();
-
+	
 	//Coupling
 	public void getCPValue() {
 		Coupling c = new Coupling();
